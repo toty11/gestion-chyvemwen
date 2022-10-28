@@ -1,0 +1,37 @@
+section {
+    width: 15%;
+    height: 100vh;
+}
+
+ul {
+    padding: unset;
+    margin: unset;
+}
+
+li {
+    list-style: none;
+    padding: 50px 0px;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    background-color: #EA5A4D;
+}
+
+li:hover a{
+    text-decoration: underline;
+}
+
+a {
+    color: #fff;
+    text-align: center;
+    display: block;
+    text-decoration: unset;
+}
+
+h1 {
+    margin: unset;
+    background-color: #E58C72;
+    color: #fff;
+    text-align: center;
+    height: 70px;
+    line-height: 70px;
+}
