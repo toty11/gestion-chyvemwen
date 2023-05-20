@@ -1,4 +1,4 @@
-section {
+.menu {
     width: 15%;
     height: 100vh;
 }
@@ -10,7 +10,7 @@ ul {
 
 li {
     list-style: none;
-    padding: 50px 0px;
+    padding: 60px 0px;
     font-size: 16px;
     letter-spacing: 0.3px;
     background-color: #EA5A4D;
@@ -27,11 +27,11 @@ a {
     text-decoration: unset;
 }
 
-h1 {
+.menu h1 {
     margin: unset;
-    background-color: #E58C72;
+    background-color: #CF9695;
     color: #fff;
     text-align: center;
-    height: 70px;
-    line-height: 70px;
+    height: 80px;
+    line-height: 80px;
 }
