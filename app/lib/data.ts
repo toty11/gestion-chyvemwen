@@ -7,7 +7,9 @@ import {
   LatestInvoiceRaw,
   User,
   Revenue,
+  Produits
 } from './definitions';
+import { unstable_noStore as noStore } from 'next/cache';
 import { formatCurrency } from './utils';
 
 export async function fetchRevenue() {
@@ -228,4 +230,55 @@ export async function getUser(email: string) {
     console.error('Failed to fetch user:', error);
     throw new Error('Failed to fetch user.');
   }
+}
+
+export async function getProduits(){
+  var data = [{
+    id: "1",
+    name: "test",
+    created: "",
+    amount: 3000
+  }];
+
+  
+  return data;
+}
+
+export async function getCommandes(){
+  var produits = await getProduits();
+  var data = [{
+    id: "1",
+    produits: produits,
+  }];
+
+  return data;
+}
+
+const PRODUITS_PAR_PAGE = 6;
+export async function getProduitsFiltrer(query: string,
+  currentPage: number,){
+  noStore();
+  const offset = (currentPage - 1) * ITEMS_PER_PAGE;
+  var data = [{
+    id: "1",
+    name: "test",
+    amount: 1000,
+    created: ""
+  },
+  {
+    id: "2",
+    name: "test",
+    amount: 10000,
+    created: ""
+  }];
+
+  var res = await fetch(`http://localhost:5000/products/${ITEMS_PER_PAGE}/${offset}`);
+  var j = await res.json();
+  console.log(j);
+  return j;
+}
+
+export async function getPageProduits(query: string) {
+  const totalPages = 3;
+  return totalPages;
 }
